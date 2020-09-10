@@ -3,9 +3,13 @@ import { StyleSheet, View, Text } from 'react-native'
 import { Button } from 'react-native-elements'
 
 export default class QuestionPage extends Component {
+  state = {
+    options: ['Option 1', 'Option 2', 'Option 3', 'Option 4'],
+  }
+
   renderButtons(): ReactNode {
-    return [0, 1, 2, 3].map((i) => {
-      return <Button title="Option 1" type="outline"></Button>
+    return this.state.options.map((i) => {
+      return <Button title={i} type="outline"></Button>
     })
   }
 
